@@ -45,7 +45,7 @@ def mostCommon(selectedUser, x):
     withoutGNMedia = withoutGN[withoutGN["message"] != '<Media omitted>\n']
 
     # stopWords = open("stopwords-hinglish.txt", "r").read()
-    stopWords = open("/wp_analyzer/whatsapp-chat-analyser-master/stopwords-hinglish.txt", "r").read()
+    stopWords = open("/whatsapp-chat-analyser-master/stopwords-hinglish.txt", "r").read()
     words = []
 
     for message in withoutGNMedia['message']:
