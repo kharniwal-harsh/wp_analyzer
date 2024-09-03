@@ -44,8 +44,8 @@ def mostCommon(selectedUser, x):
     withoutGN = x[x['user'] != 'default']
     withoutGNMedia = withoutGN[withoutGN["message"] != '<Media omitted>\n']
 
-    stopWords = open("stopwords-hinglish.txt", "r").read()
-
+    # stopWords = open("stopwords-hinglish.txt", "r").read()
+    stopWords = open("/workspaces/wp_analyzer/whatsapp-chat-analyser-master/stopwords-hinglish.txt", "r").read()
     words = []
 
     for message in withoutGNMedia['message']:
@@ -69,7 +69,7 @@ def mostEmoji(selectedUser, x):
         if isinstance(message, str):
             message_emojized = emoji.emojize(message, language='alias')
             emojis.extend(
-                [c for c in message_emojized if c in emoji.UNICODE_EMOJI['en']])
+                [c for c in message_emojized if c in emoji.EMOJI_DATA])
 
     emoji_counts = Counter(emojis)
     emoji_df = pd.DataFrame(list(emoji_counts.items()),
