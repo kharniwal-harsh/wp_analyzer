@@ -10,10 +10,39 @@ import plotly.express as px
 
 st.set_page_config(page_title="Shrudex", layout="wide")
 
-st.title("WhatsChat🔎")
-st.write("*Made with❤️‍🔥 by Harsh Kharniwal!👨🏻‍💻*")
+#st.title("WhatsChat🔎")
+#st.write("*Made with❤️‍🔥 by Harsh Kharniwal!👨🏻‍💻*")
 
-st.sidebar.title("WhatsApp Chat Analyzer")
+st.sidebar.title("WhatsApp Chat Analyzer :")
+
+#
+st.title("WhatsApp Chat Analyzer 😃")
+
+st.markdown(
+    "This app is use to analyze your WhatsApp Chat using the exported text file 📁.")
+st.sidebar.image("wp_analyzer/whatsapp-chat-analyser-master/WhatsApp-Logo.wine.png",use_column_width=True)
+#st.sidebar.image("./assets/images/banner.jpeg",use_column_width=True)
+
+#st.sidebar.title("Analyze:")
+st.sidebar.markdown(
+    "This app is use to analyze your WhatsApp Chat using the exported text file 📁.")
+
+st.sidebar.markdown('<b>Harsh Kharniwal</b>\
+                <a href = "https://github.com/kharniwal-harsh/wp2/tree/main/WhatsApp-Chat-Analyzer-master" ><img src = "https://img.shields.io/badge/Author-@harsh-gray.svg?colorA=gray&colorB=dodgerblue&logo=github"/>\
+                <a/>', unsafe_allow_html=True)
+
+st.sidebar.markdown('**How to export chat text file?**')
+st.sidebar.text('Follow the steps 👇:')
+st.sidebar.text('1) Open the individual or group chat.')
+st.sidebar.text('2) Tap options > More > Export chat.')
+st.sidebar.text('3) Choose export without media.')
+
+st.sidebar.markdown('*You are all set to go 😃*.')
+
+
+#
+
+
 uploadedFile = st.sidebar.file_uploader("Choose a File🗃️")
 if uploadedFile is not None:
     bytesData = uploadedFile.getvalue()
@@ -265,3 +294,10 @@ if uploadedFile is not None:
                 plt.style.use('dark_background')
                 ax.set_title('')
                 st.pyplot(fig)
+st.sidebar.markdown("**Don't worry your data is not stored!**")
+st.sidebar.markdown("**feel free to use 😊.**")
+                
+st.sidebar.markdown(
+    "[![built with love](https://forthebadge.com/images/badges/built-with-love.svg)](https://www.linkedin.com/in/harsh-kharniwal9351/)")
+st.sidebar.markdown(
+    "[![smile please](https://forthebadge.com/images/badges/makes-people-smile.svg)](https://www.linkedin.com/in/harsh-kharniwal9351/)")
