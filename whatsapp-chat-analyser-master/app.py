@@ -60,10 +60,13 @@ if uploadedFile is not None:
         file_contents = []
 
         if uploadedFile is not None:
-            content = uploadedFile.read().decode('utf-8')
+            bytesData = uploadedFile.getvalue()
+            finalData = bytesData.decode("utf-8")
+            dataFrame = preprocessor.preprocess(finalData)
+            # content = uploadedFile.read().decode('utf-8')
 
             # Use StringIO object to create a file-like object
-            with io.StringIO(content) as f:
+            with io.StringIO(dataFrame) as f:
                 reader = csv.reader(f, delimiter='\n')
                 for each in reader:
                     if len(each) > 0:
@@ -94,9 +97,7 @@ if uploadedFile is not None:
 
 
     
-    bytesData = uploadedFile.getvalue()
-    finalData = bytesData.decode("utf-8")
-    dataFrame = preprocessor.preprocess(finalData)
+    
     #st.title("WhatsApp Chat Data")
     #st.dataframe(dataFrame.head())
 
