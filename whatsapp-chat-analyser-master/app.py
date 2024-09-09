@@ -20,7 +20,7 @@ st.title("WhatsApp Chat Analyzer 😃")
 
 st.markdown(
     "This app is use to analyze your WhatsApp Chat using the exported text file 📁.")
-st.sidebar.image("wp_analyzer/whatsapp-chat-analyser-master/WhatsApp-Logo.wine.png",use_column_width=True)
+st.sidebar.image("whatsapp-chat-analyser-master/WhatsApp-Logo.wine.png",use_column_width=True)
 #st.sidebar.image("./assets/images/banner.jpeg",use_column_width=True)
 
 #st.sidebar.title("Analyze:")
