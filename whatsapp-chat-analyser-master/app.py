@@ -54,10 +54,6 @@ uploadedFile = st.sidebar.file_uploader("", type=["txt"])
 
 # uploadedFile = st.sidebar.file_uploader("Choose a File🗃️")
 if uploadedFile is not None:
-
-
-###
-
 @st.cache_data
     def load_data(date_format=date_format):
 
