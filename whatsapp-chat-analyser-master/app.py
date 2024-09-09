@@ -54,6 +54,50 @@ uploadedFile = st.sidebar.file_uploader("", type=["txt"])
 
 # uploadedFile = st.sidebar.file_uploader("Choose a File🗃️")
 if uploadedFile is not None:
+
+
+###
+
+@st.cache_data
+    def load_data(date_format=date_format):
+
+        file_contents = []
+
+        if uploadedFile is not None:
+            content = uploadedFile.read().decode('utf-8')
+
+            # Use StringIO object to create a file-like object
+            with io.StringIO(content) as f:
+                reader = csv.reader(f, delimiter='\n')
+                for each in reader:
+                    if len(each) > 0:
+                        file_contents.append(each[0])
+                    else:
+                        file_contents.append('')
+        else:
+            st.error("Please upload the WhatsApp chat dataset!")
+
+        return func.read_data(file_contents, date_format)
+
+    try:
+        data = load_data()
+
+        if data.empty:
+            st.error("Please upload the WhatsApp chat dataset!")
+
+        if st.sidebar.checkbox("Show raw data", True):
+            st.write(data)
+
+
+###
+
+
+
+
+
+
+
+    
     bytesData = uploadedFile.getvalue()
     finalData = bytesData.decode("utf-8")
     dataFrame = preprocessor.preprocess(finalData)
