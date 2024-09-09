@@ -39,11 +39,20 @@ st.sidebar.text('3) Choose export without media.')
 
 st.sidebar.markdown('*You are all set to go 😃*.')
 
+###
+st.sidebar.markdown('**Upload your chat text file:**')
+date_format = st.sidebar.selectbox('Please select the date format of your file:',
+                                   ('mm/dd/yyyy', 'mm/dd/yy',
+                                    'dd/mm/yyyy', 'dd/mm/yy',
+                                    'yyyy/mm/dd', 'yy/mm/dd'), key='0')
+uploadedFile = st.sidebar.file_uploader("", type=["txt"])
 
-#
+
+###
 
 
-uploadedFile = st.sidebar.file_uploader("Choose a File🗃️")
+
+# uploadedFile = st.sidebar.file_uploader("Choose a File🗃️")
 if uploadedFile is not None:
     bytesData = uploadedFile.getvalue()
     finalData = bytesData.decode("utf-8")
