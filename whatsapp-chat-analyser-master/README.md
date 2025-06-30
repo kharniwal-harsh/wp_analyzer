@@ -59,7 +59,7 @@ Contributions are always welcome! If you want to contribute to this project, fee
 
 ## Contact
 
-If you have any questions or suggestions, feel free to contact us at codeshubh@gmail.com.
+If you have any questions or suggestions, feel free to contact us at harshkharniwal9351@gmail.com.
 
 ## Acknowledgements
 
